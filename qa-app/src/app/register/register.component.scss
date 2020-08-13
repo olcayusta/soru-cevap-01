@@ -1,0 +1,94 @@
+@import '~@angular/cdk/text-field';
+
+input {
+  @include cdk-text-field-autofill-color(transparent, black);
+}
+
+.avatar {
+  display: block;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.form-title {
+  margin: 0;
+}
+
+p {
+  font-size: 14px;
+  line-height: 24px;
+  color: #606060;
+  margin: 0;
+}
+
+.providers-container {
+  display: flex;
+
+  a {
+    margin-right: 8px;
+  }
+
+  a:first-child {
+    margin-left: -8px;
+  }
+
+  span {
+    margin-left: 8px;
+  }
+}
+
+:host ::ng-deep svg {
+  fill: rgba(0, 0, 0, .74);
+}
+
+app-google-icon {
+  display: inline-flex;
+}
+
+app-github-icon {
+  display: inline-flex;
+}
+
+@media (min-width: 599px) {
+
+  :host {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .form-container {
+    width: 900px;
+    min-height: 600px;
+    border-radius: 8px;
+    padding: 48px;
+    border: 1px solid rgba(0, 0, 0, .12);
+  }
+}
+
+form {
+  // padding: 24px;
+  box-sizing: border-box;
+  margin-top: 48px;
+}
+
+.form-body {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 24px;
+  padding-top: 24px;
+}
+
+.row-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 24px;
+}
+
+#file {
+  display: none;
+}

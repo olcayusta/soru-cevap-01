@@ -1,0 +1,38 @@
+<mat-toolbar>
+  <button mat-icon-button (click)="closeSidenav()">
+    <mat-icon>menu</mat-icon>
+  </button>
+</mat-toolbar>
+<mat-nav-list>
+  <a mat-list-item routerLinkActive="active" routerLink="/" [routerLinkActiveOptions]="{exact: true}" (click)="listItemClicked()">
+    <span>Ana sayfa</span>
+  </a>
+  <a mat-list-item routerLinkActive="active" routerLink="/favorites" (click)="listItemClicked()">
+    <span>Favoriler</span>
+  </a>
+  <a mat-list-item routerLinkActive="active" routerLink="/my-questions" (click)="listItemClicked()">
+    <span>Sorularım</span>
+  </a>
+</mat-nav-list>
+<mat-divider></mat-divider>
+<mat-nav-list>
+  <h3 matSubheader>Sayfalar</h3>
+  <a mat-list-item routerLinkActive="active" routerLink="/users" (click)="listItemClicked()">
+    <span class="item-text">Kullanıcılar</span>
+  </a>
+  <a mat-list-item routerLinkActive="active" routerLink="/tags" (click)="listItemClicked()">
+    <span class="item-text">Etiketler</span>
+  </a>
+</mat-nav-list>
+<mat-divider></mat-divider>
+<mat-nav-list>
+  <a mat-list-item routerLinkActive="active" routerLink="/settings" (click)="listItemClicked()">
+    <span>Ayarlar</span>
+  </a>
+  <a mat-list-item routerLinkActive="active" routerLink="/help" (click)="listItemClicked()">
+    <span>Yardım</span>
+  </a>
+  <a mat-list-item routerLinkActive="active" routerLink="/feedback" (click)="listItemClicked()">
+    <span>Geri bildirim gönder</span>
+  </a>
+</mat-nav-list>

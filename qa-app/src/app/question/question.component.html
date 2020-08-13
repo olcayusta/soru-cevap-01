@@ -1,0 +1,62 @@
+<div class="main-container">
+  <div class="card-header">
+
+    <h4 class="question-title">{{question.title}}</h4>
+
+    <div class="info-header-bottom">
+      <div>{{question.viewCount}} görüntüleme</div>
+      <span class="bracket">—</span>
+      <div class="article-date">{{question.createdTime | date}}</div>
+    </div>
+
+    <div class="user-info">
+      <div class="author-avatar-wrapper">
+        <img class="author-avatar" src="{{question.user.avatarUrl}}" alt="{{question.user.displayName}}">
+      </div>
+      <div>
+        <a [routerLink]="['/user', question.user.id]">
+          <div class="display-name">{{question.user.displayName}}</div>
+        </a>
+        <div class="author-created-time">34k itibar puanı</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="content-inner">
+    <!--<div class="vote-grid">
+      <button matRipple (click)="upvote()" matTooltip="Bu soru yararlı">
+        <app-arrow-drop-up-icon></app-arrow-drop-up-icon>
+      </button>
+      <div class="vote-count">{{question.upvoteCount - question.downvoteCount}}</div>
+      <button matRipple (click)="downvote()" matTooltip="Bu soru yararlı değil">
+        <app-arrow-drop-down-icon></app-arrow-drop-down-icon>
+      </button>
+    </div>-->
+    <!-- <app-marked-text [text]="question.text"></app-marked-text>-->
+    <div [innerHTML]="question.text" appPrettyPrint></div>
+  </div>
+
+  <!--<div>-->
+  <!--  <button mat-raised-button #addCommentButton (click)="isOverlayOpened = !isOverlayOpened">-->
+  <!--  &lt;!&ndash;  <mat-icon>comment</mat-icon>&ndash;&gt;-->
+  <!--    <span>YORUM YAP</span>-->
+  <!--  </button>-->
+  <!--</div>-->
+
+
+  <h6 class="comment-title">{{question?.comments?.length}} yorum</h6>
+  <app-comment-list [comments]="question.comments"></app-comment-list>
+
+  <h6 class="answer-title">{{question?.answers?.length}} cevap</h6>
+  <app-answer-list [answers]="question.answers"></app-answer-list>
+
+  <app-reply-form [questionId]="question.id"></app-reply-form>
+
+<!--  <ng-container *ngIf="isOverlayOpened">
+    <app-comment-form [questionId]="question.id"></app-comment-form>
+  </ng-container>
+
+  <h3 class="mat-h3" *ngIf="question.comments">Yorumlar ({{question.comments?.length}})</h3>
+  <app-comment-list [comments]="question.comments"></app-comment-list>-->
+</div>

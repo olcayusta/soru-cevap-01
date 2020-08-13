@@ -1,0 +1,31 @@
+:host {
+  display: block;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+h3 {
+  margin: 24px 0;
+}
+
+.form-body {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 24px;
+  padding-top: 24px;
+}
+
+textarea {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+mat-form-field {
+  max-width: 1600px;
+  // font-family: arial, inter, sans-serif;
+}
+
+.marked-preview {
+  max-width: 1600px;
+}

@@ -1,0 +1,57 @@
+.avatar-wrapper {
+  margin-right: 16px;
+}
+
+.avatar {
+  display: block;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.comment-item {
+  display: flex;
+}
+
+.comment-deails {
+  display: flex;
+  align-items: center;
+}
+
+.comment-right {
+  display: flex;
+  flex-direction: column;
+}
+
+.display-name {
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.bracket {
+  margin: 0 4px;
+  color: rgba(0, 0, 0, .72);
+}
+
+.date {
+  font-size: 13px;
+  line-height: 20px;
+  color: rgba(0, 0, 0, .72);
+}
+
+.comment-text {
+  font-size: 16px;
+  line-height: 24px;
+  margin-top: 4px;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}

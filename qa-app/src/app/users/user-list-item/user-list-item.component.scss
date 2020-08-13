@@ -1,0 +1,41 @@
+.item {
+  display: flex;
+  align-items: center;
+}
+
+.avatar-placeholder {
+  width: 104px;
+  height: 104px;
+  border-radius: 50%;
+  margin-right: 24px;
+  background-color: rgba(0, 0, 0, .12);
+}
+
+.avatar {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.primary-text {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.medium-text {
+  font-size: 14px;
+  line-height: 24px;
+  color: rgba(0, 0, 0, .72);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}

@@ -1,0 +1,31 @@
+<mat-toolbar>
+  <span>Filtre</span>
+  <span class="flex-spacer"></span>
+  <button mat-icon-button (click)="closeSidenav.emit(true)">
+    <mat-icon>close</mat-icon>
+  </button>
+</mat-toolbar>
+
+<div class="content">
+
+  <div class="sheet-box-title">Tür</div>
+  <div class="labels">
+    <mat-checkbox color="primary" *ngFor="let label of mocks" [value]="label.value" [name]="checkboxName" (change)="onChange($event)">{{label.viewValue}}</mat-checkbox>
+  </div>
+
+  <div class="filter-box">
+    <div class="sheet-box-title">Sıralama</div>
+    <mat-radio-group color="primary" name="order" value="one">
+      <mat-radio-button value="one">Date created</mat-radio-button>
+      <mat-radio-button value="two">Last opened</mat-radio-button>
+      <mat-radio-button>Last modified</mat-radio-button>
+      <mat-radio-button>Owner</mat-radio-button>
+      <mat-radio-button>Name</mat-radio-button>
+      <mat-radio-button>Completed</mat-radio-button>
+    </mat-radio-group>
+  </div>
+</div>
+
+<div class="row-actions">
+  <button mat-button color="primary" (click)="applyFilter()">FİLTRE'Yİ UYGULA</button>
+</div>

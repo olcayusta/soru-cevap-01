@@ -1,0 +1,61 @@
+.login-title {
+/*  font-size: 24px;
+  font-weight: 500;
+  line-height: 32px;*/
+  margin: 0;
+}
+
+p {
+  font-size: 14px;
+  line-height: 24px;
+  color: #606060;
+  margin: 0;
+}
+
+.form-body {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 24px;
+  margin-top: 48px;
+}
+
+form {
+  margin-top: 48px;
+}
+
+.row-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 24px;
+}
+
+.register-link {
+  margin-left: -8px;
+}
+
+.providers-container {
+  display: flex;
+
+
+  a {
+    display: flex;
+    justify-content: center;
+  }
+
+  a:first-child {
+    margin-left: -8px;
+  }
+
+  span {
+    margin-left: 8px;
+  }
+}
+
+::ng-deep app-google-icon {
+  display: inline-flex;
+}
+
+::ng-deep app-github-icon {
+  display: inline-flex;
+}
+

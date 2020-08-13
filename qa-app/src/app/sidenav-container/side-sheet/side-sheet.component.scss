@@ -1,0 +1,69 @@
+:host {
+  display: block;
+  height: calc(100vh - 64px);
+  overflow-y: auto;
+}
+
+app-close-icon {
+  display: inline-flex;
+}
+
+.flex-spacer {
+  flex: 1 0 auto;
+}
+
+.labels {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 8px 0;
+  padding: 0 16px;
+}
+
+.sheet-box-title {
+  padding: 12px 0;
+  font-size: 14px;
+  line-height: 24px;
+  color: #606060;
+  margin-left: 16px;
+}
+
+mat-checkbox {
+  width: 100%;
+  flex: 1;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+::ng-deep .mat-checkbox-layout {
+  // width: 100%;
+}
+
+::ng-deep .mat-checkbox-label {
+  margin-left: 8px;
+}
+
+.mat-radio-button {
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.row-actions {
+  padding: 8px 16px;
+  margin: 16px 0;
+}
+
+.filter-box {
+  margin-top: 24px;
+}
+
+mat-radio-group {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 8px 0;
+  margin-left: 16px;
+}
+
+::ng-deep .mat-radio-label-content {
+  padding-left: 16px !important;
+}
+

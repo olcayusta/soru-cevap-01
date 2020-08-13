@@ -1,0 +1,89 @@
+.search-form {
+  display: none;
+}
+
+@media (min-width: 599px) {
+  .search-form {
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 640px;
+    height: 48px;
+    padding-left: 12px;
+    background-color: rgba(0, 0, 0, .08);
+    display: flex;
+    align-items: center;
+  }
+}
+
+.search-input {
+  background: none;
+  outline: 0;
+  border: 0;
+  width: 100%;
+  height: 100%;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-size: 14px;
+  line-height: 24px;
+  padding-left: 12px;
+  color: inherit;
+}
+
+mat-icon {
+  color: var(--medium-emphasis-text-color);
+}
+
+input::placeholder {
+  color: var(--medium-emphasis-text-color);
+}
+
+:host ::ng-deep mark {
+  background: none;
+  font-weight: 700;
+}
+
+.autocomplete-action-row {
+  padding: 12px 40px 12px 40px;
+  border-top: 1px solid rgba(0, 0, 0, .12);
+  margin-top: 16px;
+}
+
+::ng-deep .search-panel {
+  padding: 8px 0 0;
+  // border-radius: 8px !important;
+  // margin-top: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2), 0 2px 1px rgba(0, 0, 0, 0.12), 0 1px 1px rgba(0, 0, 0, 0.14) !important;
+
+  ::ng-deep mark {
+    background: none;
+    // font-weight: 700;
+  }
+
+  .mat-option {
+    height: 40px !important;
+    padding-left: 48px;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: .25px;
+  }
+}
+
+::ng-deep .mat-optgroup-label {
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 16px;
+  color: var(--medium-emphasis-text-color);
+  padding-left: 48px !important;
+  letter-spacing: 1.5px;
+}
+
+::ng-deep .search-panel::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::ng-deep .search-panel::-webkit-scrollbar-thumb {
+  background: rgba(128, 134, 139, .26);
+  border-radius: 8px;
+}

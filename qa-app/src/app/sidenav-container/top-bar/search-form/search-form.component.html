@@ -1,0 +1,22 @@
+<form spellcheck="false" autocomplete="off" class="search-form" matAutocompleteOrigin #origin="matAutocompleteOrigin">
+  <button mat-icon-button>
+    <mat-icon>search</mat-icon>
+  </button>
+  <input #searchInput placeholder="Ara" class="search-input"
+         [formControl]="searchControl" [matAutocomplete]="auto" [matAutocompleteConnectedTo]="origin">
+</form>
+
+<mat-autocomplete #auto="matAutocomplete" class="search-panel" [displayWith]="displayFn"
+                 (closed)="onClosed()">
+
+  <mat-optgroup label="TAHMİNİ SORULAR"></mat-optgroup>
+  <mat-option [routerLink]="['/question', question.id]" *ngFor="let question of questions$ | async"
+              [value]="question.title">
+    <span [innerHTML]="question.title"></span>
+  </mat-option>
+  <div class="autocomplete-action-row">
+    <a mat-button color="primary" (click)="onShowAllResultsClicked()">"{{searchControl.value}}" İÇİN TÜM SONUÇLARI
+      GÖSTER</a>
+  </div>
+
+</mat-autocomplete>

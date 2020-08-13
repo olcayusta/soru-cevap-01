@@ -1,0 +1,26 @@
+<div>
+  <h3>Soru sor</h3>
+  <form spellcheck="false" autocomplete="off" [formGroup]="form" (submit)="submit()">
+
+    <div class="form-body">
+      <mat-form-field>
+        <mat-label>Soru başlığı</mat-label>
+        <input matInput formControlName="title">
+      </mat-form-field>
+
+      <app-editor-buttons></app-editor-buttons>
+
+      <mat-form-field>
+        <mat-label>Soru içeriği</mat-label>
+        <textarea matInput matTextareaAutosize matAutosizeMinRows="1" matAutosizeMaxRows="12"
+                  formControlName="text"></textarea>
+      </mat-form-field>
+      <mat-divider></mat-divider>
+ <!--     <div class="marked-preview" [appMarked]="form.controls.text.value"></div>-->
+      <app-chips-autocomplete></app-chips-autocomplete>
+    </div>
+    <div class="row-actions">
+      <button mat-raised-button color="primary" type="submit" [disabled]="!form.valid">GÖNDER</button>
+    </div>
+  </form>
+</div>

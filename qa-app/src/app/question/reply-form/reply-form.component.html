@@ -1,0 +1,13 @@
+<h6>Cevapla</h6>
+
+<form autocomplete="off" spellcheck="false" id="form" (submit)="submit()">
+  <mat-form-field>
+    <mat-label>Cevap</mat-label>
+    <textarea matInput matTextareaAutosize matAutosizeMinRows="8" [formControl]="answerControl"></textarea>
+  </mat-form-field>
+</form>
+<!--<div class="marked-preview" [appMarked]="answerControl.value"></div>-->
+<div class="marked-preview" [innerHTML]="answerControl.value"></div>
+<div class="row-actions">
+  <button type="submit" form="form" mat-raised-button color="primary">GÖNDER</button>
+</div>

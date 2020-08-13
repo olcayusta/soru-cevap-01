@@ -1,0 +1,13 @@
+:host {
+  display: block;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding-top: 24px;
+}
+
+.items {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 88px 24px;
+  padding-top: 24px;
+}

@@ -1,0 +1,22 @@
+<div class="home-page">
+  <h4>Son sorular</h4>
+  <router-outlet></router-outlet>
+</div>
+
+<mat-menu #filterMenu class="mini-menu">
+  <button mat-menu-item (click)="$event.stopPropagation(); checkbox.toggle()" *ngFor="let food of foods">
+    <mat-checkbox color="primary" #checkbox (click)="checkbox.toggle()">{{food.viewValue}}</mat-checkbox>
+  </button>
+</mat-menu>
+
+<mat-menu #sortMenu class="mini-menu">
+
+  <button #sortMenuItem mat-menu-item
+          (click)="menuItemClicked(index)" [class.selected]="sortMenuItem._highlighted"
+          *ngFor="let item of menuItems; let index = index">{{item.viewValue}}</button>
+
+  <!--    <button mat-menu-item (click)="$event.stopPropagation(); checkbox.toggle()">
+        <mat-checkbox color="primary" #checkbox (click)="checkbox.toggle()">Xd</mat-checkbox>
+      </button>-->
+
+</mat-menu>

@@ -1,0 +1,42 @@
+<div class="form-container">
+  <div class="providers-container">
+    <a mat-icon-button matTooltip="Google ile oturum aç">
+      <app-google-icon></app-google-icon>
+    </a>
+    <a mat-icon-button matTooltip="Github ile oturum aç">
+      <app-github-icon></app-github-icon>
+    </a>
+  </div>
+
+  <form autocomplete="off" spellcheck="false" [formGroup]="form" (submit)="submit()">
+
+    <h6 class="form-title">Hesap oluştur</h6>
+    <p>iyidev.com hesabı oluşturun</p>
+
+    <div class="form-body">
+      <input id="file" #file type="file" (change)="onChange($event)">
+
+      <div>
+        <button type="button" mat-raised-button color="primary" (click)="file.click()">FOTOĞRAF SEÇ...</button>
+      </div>
+
+      <img *ngIf="blobUrl" class="avatar" [src]="blobUrl" alt="">
+
+      <mat-form-field>
+        <mat-label>Eposta</mat-label>
+        <input matInput formControlName="email">
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Şifre</mat-label>
+        <input type="password" matInput formControlName="password">
+      </mat-form-field>
+
+    </div>
+
+    <div class="row-actions">
+      <a mat-button color="primary" type="button" routerLink="/login">OTURUM AÇ</a>
+      <button mat-raised-button color="primary" type="submit">İLERİ</button>
+    </div>
+  </form>
+</div>

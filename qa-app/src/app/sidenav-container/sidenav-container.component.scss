@@ -1,0 +1,56 @@
+.main {
+  padding-top: 64px;
+}
+
+.fixed-fab-button {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 1;
+
+  a[mat-fab] {
+    width: auto;
+    border-radius: 32px;
+    padding: 0 20px 0 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 1px 10px rgba(0, 0, 0, 0.12), 0 4px 5px rgba(0, 0, 0, 0.14);
+    background-color: #212121 !important;
+  }
+
+  mat-icon {
+    margin-right: 8px;
+    color: #fff;
+  }
+
+  span {
+    font-size: 14px;
+    line-height: 16px;
+    text-transform: uppercase;
+    color: var(--fab-color);
+    letter-spacing: 1.25px;
+  }
+}
+
+/*
+:host ::ng-deep {
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #fff;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, .12);
+    border-radius: 8px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, .24);
+  }
+
+  ::-webkit-scrollbar-thumb:active {
+    background: rgba(0, 0, 0, .36);
+  }
+}
+*/

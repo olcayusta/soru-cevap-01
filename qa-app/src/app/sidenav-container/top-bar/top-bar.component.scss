@@ -1,0 +1,55 @@
+mat-toolbar {
+  position: fixed;
+  top: 0;
+  z-index: 4;
+  border-bottom: 1px solid rgba(0, 0, 0, .12);
+  box-shadow: 0 1px 1px rgba(27, 31, 35, .1) !important;
+  background-color: rgba(255, 255, 255, 0.96);
+}
+
+.site-link {
+  color: inherit;
+  text-decoration: none;
+  margin-left: 24px;
+}
+
+sup {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1;
+  margin-left: 4px;
+}
+
+.flex-spacer {
+  flex: 1 0 auto;
+}
+
+.profile-picture-button {
+  background: none;
+  border: none;
+  outline: none;
+  padding: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin: 0 0 0 12px;
+  border-radius: 50%;
+}
+
+.profile-picture-placeholder {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, .12);
+}
+
+.profile-picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}

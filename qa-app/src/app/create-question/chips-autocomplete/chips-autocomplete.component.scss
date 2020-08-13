@@ -1,0 +1,33 @@
+.example-chip-list {
+  width: 100%;
+}
+
+.description {
+  font-size: 12px;
+  line-height: 16px;
+  color: rgba(0,0,0,.72);
+}
+
+mat-option {
+  height: 64px;
+}
+
+::ng-deep .mat-option-text {
+  display: flex !important;
+  flex-direction: column;
+
+  .title {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .description {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+app-cancel-icon {
+  display: inline-flex;
+  align-items: center;
+}

@@ -1,0 +1,30 @@
+<div class="providers-container">
+  <a mat-icon-button matTooltip="Google ile oturum aç">
+    <app-google-icon></app-google-icon>
+  </a>
+  <a mat-icon-button matTooltip="Github ile oturum aç">
+    <app-github-icon></app-github-icon>
+  </a>
+</div>
+
+<form autocomplete="off" spellcheck="false" [formGroup]="form" (submit)="submit()">
+
+  <h6 class="login-title">Oturum aç</h6>
+  <p><em>iyidev.com</em> hesabınızı kullanarak oturum açın</p>
+
+  <div class="form-body">
+    <mat-form-field>
+      <mat-label>E-posta</mat-label>
+      <input type="email" matInput formControlName="email">
+      <mat-error *ngIf="form.controls.email.hasError('required')">Bir e-posta adresi girin</mat-error>
+      <mat-error *ngIf="form.controls.email.hasError('email')">Bir e-posta adresi girin</mat-error>
+      <mat-error *ngIf="form.controls.email.hasError('notFoundAccount')">Hesap bulunamadı</mat-error>
+    </mat-form-field>
+  </div>
+
+  <div class="row-actions">
+    <a mat-button color="primary" type="button" routerLink="/register" class="register-link">HESAP OLUŞTUR</a>
+    <button mat-raised-button color="primary" type="submit">İLERİ</button>
+  </div>
+
+</form>

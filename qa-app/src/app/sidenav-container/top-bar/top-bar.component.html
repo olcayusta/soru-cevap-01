@@ -1,0 +1,62 @@
+<mat-toolbar>
+  <button mat-icon-button (click)="openSidenav.emit()">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <a class="site-link" routerLink="/">
+    <span>Title</span>
+     <sup>beta 1</sup>
+  </a>
+
+  <span class="flex-spacer"></span>
+
+  <app-search-form></app-search-form>
+
+  <span class="flex-spacer"></span>
+
+  <ng-container *ngIf="user; else logIn">
+
+    <button mat-icon-button matTooltip="Filtrele" (click)="openSideSheet.emit(true)">
+      <mat-icon>filter_list</mat-icon>
+    </button>
+
+    <button mat-icon-button
+            id="notificationButton"
+            matTooltip="Bildirimler"
+            (click)="openPopup2($event)"
+            cdkOverlayOrigin
+            #notificationButton="cdkOverlayOrigin">
+      <mat-icon>notifications</mat-icon>
+    </button>
+
+    <ng-template cdkConnectedOverlay
+                 [cdkConnectedOverlayOrigin]="notificationButton"
+                 [cdkConnectedOverlayScrollStrategy]="scrollStrategy"
+                 [cdkConnectedOverlayOpen]="isOpened2">
+      <ng-template [ngComponentOutlet]="notificationPopupComponent"></ng-template>
+    </ng-template>
+
+    <button class="profile-picture-button"
+            id="avatarButton"
+            matRipple
+            matTooltip="Hesap"
+            (click)="openPopup($event)"
+            cdkOverlayOrigin
+            #avatarButton="cdkOverlayOrigin">
+      <span class="profile-picture-placeholder">
+        <img class="profile-picture" src="{{user.avatarUrl}}" alt="{{user.displayName}}">
+      </span>
+    </button>
+
+    <ng-template cdkConnectedOverlay
+                 [cdkConnectedOverlayOrigin]="avatarButton"
+                 [cdkConnectedOverlayScrollStrategy]="scrollStrategy2"
+                 [cdkConnectedOverlayOpen]="isOpened">
+      <ng-container *ngComponentOutlet="avatarPopupComponent"></ng-container>
+    </ng-template>
+
+  </ng-container>
+
+  <ng-template #logIn>
+    <a mat-button routerLink="/login">OTURUM AÇ</a>
+  </ng-template>
+</mat-toolbar>

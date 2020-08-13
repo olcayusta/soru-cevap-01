@@ -1,0 +1,17 @@
+<div class="comment-item">
+  <div class="avatar-wrapper">
+    <img class="avatar" src="{{comment.user.avatarUrl}}" alt="{{comment.user.displayName}}">
+  </div>
+
+  <div class="comment-right">
+    <div class="comment-deails">
+      <a [routerLink]="['/user', comment.user.id]">
+        <div class="display-name">{{comment.user.displayName}}</div>
+      </a>
+      <span class="bracket">—</span>
+      <div class="date">{{comment.createdTime | date}}</div>
+    </div>
+    <p class="comment-text" [innerHTML]="comment.text"></p>
+  </div>
+
+</div>

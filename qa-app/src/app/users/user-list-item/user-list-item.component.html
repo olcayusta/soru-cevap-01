@@ -1,0 +1,11 @@
+<div class="item">
+  <div class="avatar-placeholder">
+    <img class="avatar" src="{{user.avatarUrl}}" alt="{{user.displayName}}">
+  </div>
+  <div class="user-info">
+    <a [routerLink]="['/user', user.id]">
+      <div class="primary-text">{{user.displayName}}</div>
+    </a>
+    <div class="medium-text">{{user.signupDate | date}}</div>
+  </div>
+</div>

@@ -1,0 +1,38 @@
+<div class="notification-popup popup-card">
+
+  <ng-container *ngIf="(notifications$ | async) as notifications else loading">
+
+    <div class="header">
+      <div class="header-title">Bildirimler</div>
+      <span class="flex-spacer"></span>
+      <button mat-icon-button matTooltip="Ayarlar">
+        <mat-icon>settings</mat-icon>
+      </button>
+    </div>
+
+    <section>
+      <mat-nav-list>
+        <a mat-list-item *ngFor="let notification of notifications">
+          <img matListAvatar [src]="notification.user.avatarUrl" alt="...">
+          <h3 matLine class="display-name">{{notification.user.displayName}}</h3>
+          <p matLine class="msg-content">
+            <span> {{notification.type}} </span>
+            <span class="notification-text"> -- {{notification.text}} </span>
+          </p>
+          <p matLine>
+            <time>{{notification.createdTime | date}}</time>
+          </p>
+        </a>
+      </mat-nav-list>
+    </section>
+
+  </ng-container>
+</div>
+
+<ng-template #loading>
+  <section>
+    <div class="spinner-center">
+      <mat-spinner diameter="32"></mat-spinner>
+    </div>
+  </section>
+</ng-template>

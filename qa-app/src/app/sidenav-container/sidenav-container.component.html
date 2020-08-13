@@ -1,0 +1,24 @@
+<mat-sidenav-container>
+  <mat-sidenav #sidenav autoFocus="false" fixedInViewport (openedStart)="drawerOpenedStart()" (closedStart)="drawerclosedStart()" [opened]="sidenavOpened$ | async">
+   <!-- <app-nav-drawer (closeSidenav)="sidenav.close()"></app-nav-drawer>-->
+    <ng-container *ngComponentOutlet="drawerComponent"></ng-container>
+  </mat-sidenav>
+  <mat-sidenav #sideSheet mode="side" fixedInViewport fixedTopGap="64" position="end">
+    <app-side-sheet (closeSidenav)="sideSheet.close()"></app-side-sheet>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <app-top-bar (openSidenav)="sidenavOpenRequest()" (openSideSheet)="sideSheet.toggle()"></app-top-bar>
+    <div class="main">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+<!--
+<div class="fixed-fab-button">
+  <a mat-fab routerLink="/ask" color="primary">
+    <mat-icon>add</mat-icon>
+    <span>SORU SOR</span>
+  </a>
+</div>
+-->

@@ -1,0 +1,44 @@
+<div class="item" *ngFor="let question of questions">
+  <div class="user-avatar-wrapper">
+    <img class="user-avatar" width="48" height="48" src="{{question.user.avatarUrl}}"
+         alt="{{question.user.displayName}}">
+  </div>
+  <div class="item-right">
+    <div class="item-right-content">
+
+      <a [routerLink]="['/question', question.id]">
+        <div class="item-title">
+          <span>{{question.title}}</span>
+          <span class="check-icon" *ngIf="question.id === 26">
+            <mat-icon>check</mat-icon>
+          </span>
+        </div>
+      </a>
+
+      <div class="item-details">
+        <a [routerLink]="['/user', question.user.id]">
+          <span class="display-name">{{question.user.displayName}}</span>
+        </a>
+        <span class="bracket">—</span>
+        <span class="time">{{question.createdTime | date}}</span>
+   <!--     <span class="bracket">—</span>
+        <span class="time">2 dk önce güncellendi</span>-->
+      </div>
+
+      <mat-chip-list>
+
+        <mat-chip [routerLink]="['/tag', tag.id]"
+                  *ngFor="let tag of question.tags; let last = last">{{tag.title}}</mat-chip>
+
+      </mat-chip-list>
+    </div>
+    <mat-divider></mat-divider>
+  </div>
+</div>
+
+
+<div class="scroll-trigger" *ngIf="!dataLoaded && loadMore">
+  <div class="my-spinner" #scrollTrigger>
+    <mat-spinner [diameter]="32"></mat-spinner>
+  </div>
+</div>

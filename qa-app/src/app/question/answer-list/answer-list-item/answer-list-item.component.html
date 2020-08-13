@@ -1,0 +1,14 @@
+<div class="card">
+  <div class="avatar-wrapper">
+    <img class="avatar" src="{{answer.user.avatarUrl}}">
+  </div>
+  <div class="">
+    <a [routerLink]="['/user', answer.user.id]">
+      <div class="display-name">{{answer.user.displayName}}</div>
+    </a>
+    <div class="time">{{answer.createdTime | date}}</div>
+  </div>
+</div>
+<!--<app-marked-text [text]="answer.text"></app-marked-text>-->
+<div [innerHTML]="answer.text"></div>
+<mat-divider></mat-divider>

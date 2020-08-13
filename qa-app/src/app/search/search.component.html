@@ -1,0 +1,13 @@
+<div class="main-container">
+  <div class="search-results" *ngIf="questions$ | async as questions">
+
+    <h4 class="page-title">"{{searchTerm}}" için arama sonuçları</h4>
+
+    <div class="no-result" *ngIf="!questions.length">
+      <h1 class="mat-h1">Sonuç bulunamadı</h1>
+      <p>Try different keywords or remove search filters</p>
+    </div>
+
+    <app-question-list [questions]="questions"></app-question-list>
+  </div>
+</div>
